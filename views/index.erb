@@ -1,0 +1,18 @@
+<h1>Enter in all the places you've been</h1>
+<p>A list of the places you've been</p>
+<ul>
+  <% @places_youve_been.each() do |spot| %>
+    <li><%= spot.place()%>, <%=spot.year()%></li>
+  <% end %>
+</ul>
+<form action="/places_youve_been" method ="post">
+  <div class="form-group">
+    <label for="place">Place</label>
+    <input id="place" name="place" class="form-control" type="text">
+  </div>
+  <div class="form-group">
+    <label for="year">Year</label>
+    <input id="year" name="year" class="form-control" type="text">
+  </div>
+  <button type = "submit" class="btn-success">Add Place</button>
+</form>
